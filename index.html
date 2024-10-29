@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Changer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+    p {
+      font-size: 1.5em;
+      margin: 20px 0;
+      color: #333;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+    }
+    #helloButton {
+      background-color: #4CAF50;
+    }
+    #resetButton {
+      background-color: #f44336;
+    }
+  </style>
+</head>
+<body>
+
+  <p id="text">Click the button to change this text.</p>
+  <button id="helloButton">Say Hello</button>
+  <button id="resetButton">Reset Text</button>
+
+  <script>
+    // Select elements
+    const textParagraph = document.querySelector('#text');
+    const helloButton = document.querySelector('#helloButton');
+    const resetButton = document.querySelector('#resetButton');
+
+    // Store original text
+    const originalText = textParagraph.textContent;
+
+    // Event listeners
+    helloButton.addEventListener('click', () => {
+      textParagraph.textContent = "Hello, World!";
+    });
+
+    resetButton.addEventListener('click', () => {
+      textParagraph.textContent = originalText;
+    });
+  </script>
+
+</body>
+</html>
